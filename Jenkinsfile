@@ -14,6 +14,10 @@ pipeline {
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
+    environment{
+        DEPLOY_TO =  'staging'
+        WISHES = 'hello how are you'
+    }
 
     stages {
         stage('Build') {
